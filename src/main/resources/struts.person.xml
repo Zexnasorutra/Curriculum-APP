@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+	<!-- Person package. Inherit default application package -->
+	<package name="Person" namespace="/" extends="application-default"
+		strict-method-invocation="false">
+		<action name="*Person" class="work.arturo.curriculum.action.PersonAction"
+			method="{1}">
+			<result name="success" type="dispatcher">/jsp/person.jsp</result>
+		</action>
+
+	</package>
+	
+</struts>

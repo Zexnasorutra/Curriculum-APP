@@ -1,0 +1,16 @@
+/target
+/.settings
+
+## Eclipse IDE
+
+.project
+.classpath
+.settings/
+.metadata
+bin/
+*.tmp
+*.bak
+*.swp
+local.properties
+.externalToolBuilders/
+*.launch
