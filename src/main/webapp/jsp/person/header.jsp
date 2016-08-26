@@ -2,7 +2,7 @@
 <!-- Header row -->
 <div class="row top-buffer-20">
 	<!-- Name -->
-	<div class="col-md-6 col-md-offset-1 top-buffer-20">
+	<div class="col-md-6 col-md-offset-1 top-buffer-60">
 		<h1>
 			<s:property value="person.name" />
 		</h1>

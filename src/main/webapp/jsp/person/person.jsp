@@ -7,8 +7,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title><s:property value="person.name" /></title>
-<script type="text/javascript" src="<s:url value="/js/jquery-3.1.0.min.js"/>"></script>
-<script type="text/javascript" src="<s:url value="/js/person/person.js"/>"></script>
+<script type="text/javascript"
+	src="<s:url value="/js/jquery-3.1.0.min.js"/>"></script>
+<script type="text/javascript"
+	src="<s:url value="/js/person/person.js"/>"></script>
 <link href="css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
@@ -16,7 +18,9 @@
 	<div class="container-fluid bottom-buffer-80">
 
 		<!-- Language buttons -->
-		<%@include file="languageButtons.jsp"%>
+		<s:if test="%{person.availableLanguages.size > 1}">
+			<%@include file="languageButtons.jsp"%>
+		</s:if>
 
 
 		<!-- Header Row -->
