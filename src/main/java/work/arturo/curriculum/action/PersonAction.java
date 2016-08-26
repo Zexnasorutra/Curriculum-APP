@@ -24,6 +24,8 @@ public class PersonAction extends ActionBase {
 	private String defaultLanguage;
 
 	public String find() throws ApplicationException {
+		logger.info("Finding person. ID: " + personID);
+
 		// If the person ID is empty, set the default person ID
 		if (personID == null || personID.equals("")) {
 			try {
@@ -45,6 +47,11 @@ public class PersonAction extends ActionBase {
 
 		// Obtains the static headers
 		this.headers = Headers.getAll();
+
+		// Obtains default language
+		if (this.person.getAvailableLanguages() != null) {
+			this.defaultLanguage = this.person.getAvailableLanguages().get(0);
+		}
 
 		return Action.SUCCESS;
 	}

@@ -6,15 +6,20 @@
 
 	<!-- Default package that control exceptions -->
 	<package name="application-default" namespace="/" extends="struts-default">
+		<result-types>
+			<result-type name="imageResult"
+				class="work.arturo.curriculum.result.ImageResult" />
+		</result-types>
+		
 		<global-results>
 			<result type="dispatcher" name="error">/jsp/error.jsp</result>
 		</global-results>
-		
+
 		<global-exception-mappings>
 			<exception-mapping exception="java.lang.Exception"
 				result="error" />
 		</global-exception-mappings>
-		
+
 		<action name="status">
 			<result type="dispatcher">/jsp/probe.jsp</result>
 		</action>

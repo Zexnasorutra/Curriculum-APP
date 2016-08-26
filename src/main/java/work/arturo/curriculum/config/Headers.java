@@ -47,8 +47,16 @@ public class Headers {
 	 */
 	@SuppressWarnings("unchecked")
 	public static void loadHeaders() throws ApplicationException {
+		logger.debug("Loading headers");
 		IQueryDAO headerDAO = new HeaderDAO();
 		headers = (List<Header>) headerDAO.findAll();
+		
+		// Control exceptions
+		if (headers == null) {
+			throw new ApplicationException("Static list of headers is null");
+		}
+		
+		logger.debug("Headers loaded: " + headers.size());
 	}
 
 	/**

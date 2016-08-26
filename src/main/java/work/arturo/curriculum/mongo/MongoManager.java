@@ -1,5 +1,6 @@
 package work.arturo.curriculum.mongo;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +17,8 @@ import com.mongodb.MongoClient;
 import com.mongodb.MongoWriteException;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.gridfs.GridFSBucket;
+import com.mongodb.client.gridfs.GridFSBuckets;
 
 /**
  * Class for encapsulate MongoDB actions and manage the connection
@@ -95,7 +98,7 @@ public class MongoManager {
 			listReturn.add(JsonUtils.fromJson(json, type));
 		}
 
-		return null;
+		return listReturn;
 
 	}
 
@@ -208,6 +211,23 @@ public class MongoManager {
 
 		return objReturn;
 	}
+	
+	/**
+	 * Find a file in a bucket
+	 * 
+	 * @param fileName
+	 *            Name of file
+	 * @param bucket
+	 *            Name of bucket
+	 */
+	public byte[] findFile(String filename, String bucket) {
+		ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+		GridFSBucket gridFSBucket = GridFSBuckets.create(mongoDatabase, bucket);
+		gridFSBucket.downloadToStream(filename, outputStream);
+
+		return outputStream.toByteArray();
+	}
+
 
 	/**
 	 * Create a JSON Document in a collection

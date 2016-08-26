@@ -9,7 +9,11 @@
 		strict-method-invocation="false">
 		<action name="*Person" class="work.arturo.curriculum.action.PersonAction"
 			method="{1}">
-			<result name="success" type="dispatcher">/jsp/person.jsp</result>
+			<result name="success" type="dispatcher">/jsp/person/person.jsp</result>
+		</action>
+		
+		<action name="findPhoto" class="work.arturo.curriculum.action.PhotoAction">
+			<result name="success" type="imageResult"></result>
 		</action>
 
 	</package>

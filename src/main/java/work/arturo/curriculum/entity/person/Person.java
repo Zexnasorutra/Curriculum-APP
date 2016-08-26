@@ -6,7 +6,8 @@ import work.arturo.curriculum.entity.Text;
 
 public class Person {
 	private String name;
-	// private File photo; TODO
+	private String photo;
+	private List<String> availableLanguages;
 	private List<Text> description;
 
 	private List<Studie> studies;
@@ -21,6 +22,22 @@ public class Person {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
+
+	public List<String> getAvailableLanguages() {
+		return availableLanguages;
+	}
+
+	public void setAvailableLanguages(List<String> availableLanguages) {
+		this.availableLanguages = availableLanguages;
 	}
 
 	public List<Text> getDescription() {
